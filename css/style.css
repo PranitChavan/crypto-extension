@@ -1,0 +1,165 @@
+:root {
+  --select-border: #777;
+  --select-focus: blue;
+  --select-arrow: var(--select-border);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: sans-serif;
+  background-color: #333;
+}
+
+li {
+  list-style: none;
+}
+a {
+  color: #fff;
+}
+
+/* .loading {
+  margin-bottom: 20rem;
+} */
+
+.spinner {
+  background-color: #333;
+  margin-top: -20px;
+  width: 50px;
+  height: 50px;
+}
+
+header {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.header__heading {
+  color: #fff;
+  text-align: center;
+  margin-left: 2rem;
+  margin-top: 4px;
+}
+
+.header__price {
+  color: #fff;
+  margin-top: 20px;
+}
+
+/* DROPDOWN SELECTION */
+select {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
+}
+
+.select {
+  outline: none;
+  text-align: center;
+  width: 75px;
+  height: 25px;
+  border: 1px solid var(--select-border);
+  border-radius: 0.25em;
+  font-size: 17px;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+
+  display: flex;
+  justify-content: center;
+}
+
+/* MAIN PRICE SECTIONS */
+
+.main {
+  padding: 2rem;
+  font-size: 20px;
+  color: #fff;
+  border-top: 1px solid #fff;
+}
+
+li {
+  margin-top: 20px;
+}
+
+.main__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.main__items {
+  display: flex;
+}
+
+.main__items--coin {
+  flex-grow: 1;
+  max-width: 125px;
+}
+
+.main__items--img {
+  width: 25px;
+  height: 25px;
+  margin-right: 0.5rem;
+}
+
+.main__items--percentage {
+  margin-right: auto;
+  align-self: baseline;
+  justify-content: baseline;
+  display: block;
+}
+
+.main__items--duration {
+  font-size: 12px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.loading {
+  color: #fff;
+  text-align: center;
+  font-size: 1px;
+}
+
+footer {
+  color: #fff;
+  text-align: center;
+}
+
+.footer__main {
+  border-bottom: 1px solid #fff;
+}
+
+.footer__details {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.footer__details p {
+  padding-left: 1rem;
+}
+
+.hide {
+  display: none;
+}
