@@ -2,6 +2,8 @@
 
 import { formatColor, formatNumber } from '../../helpers.js';
 
+let lastPrice = null;
+
 export function markupUSD(currency, data) {
   formatColor(data.P, currency);
 

@@ -8,6 +8,10 @@ import { renderFooter } from './views/footer.js';
 import * as dropdown from './views/dropdown.js';
 
 export function setCurrentCurrency(e) {
+  document.querySelectorAll('.main__items--price').forEach((el) => {
+    el.innerHTML = '';
+  });
+
   state.currentVal = e.target.value;
 }
 

@@ -1,6 +1,8 @@
 import { formatNumber, formatColor } from '../../helpers.js';
 
 export function markupEUR(currency, data) {
+  document.querySelector(`.${currency}-price`).innerHTML = '';
+
   formatColor(data.P, currency);
 
   document.querySelector(
