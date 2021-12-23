@@ -31,3 +31,25 @@ export const formatDate = function () {
 
   return new Intl.DateTimeFormat('en-In', config).format(new Date());
 };
+
+const lastPrices = {
+  btcLastPrice: null,
+  ethLastPrice: null,
+  bnbLastPrice: null,
+};
+
+export function updateColorBasedOnLastPrice(currency, currPrice, fiatCurrency) {
+  const priceEl = document.querySelector(`.${currency}-price`);
+
+  priceEl.style.color =
+    !lastPrices[`${currency}LastPrice`] ||
+    lastPrices[`${currency}LastPrice`] === currPrice
+      ? 'white'
+      : currPrice > lastPrices[`${currency}LastPrice`]
+      ? 'green'
+      : 'red';
+
+  lastPrices[`${currency}LastPrice`] = currPrice;
+
+  priceEl.innerHTML = `${formatNumber(currPrice, fiatCurrency)}`;
+}
