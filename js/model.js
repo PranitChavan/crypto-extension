@@ -24,6 +24,8 @@ export function getUSDData() {
     const data = JSON.parse(e.data);
     controlUSDData(data);
   };
+
+  return;
 }
 
 getUSDData();
@@ -46,6 +48,8 @@ export function getINRData() {
     const { data } = res;
     controlINRData(data);
   };
+
+  return;
 }
 
 getINRData();
@@ -64,6 +68,8 @@ export function getEURData() {
     const data = JSON.parse(e.data);
     controlEURData(data);
   };
+
+  return;
 }
 
 getEURData();

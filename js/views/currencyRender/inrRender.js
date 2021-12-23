@@ -1,9 +1,6 @@
 import { updateColorBasedOnLastPrice } from '../../helpers.js';
 
 export function markupINR(currency, data) {
-  const priceEl = document.querySelector(`.${currency}-price`);
-
-  console.log(priceEl.getAttribute('style'));
   const { c: price } = data;
   document.querySelector(`.${currency}-percentage`).innerHTML = '';
 

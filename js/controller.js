@@ -5,14 +5,12 @@ import { markupUSD } from './views/currencyRender/usdRender.js';
 import { markupINR } from './views/currencyRender/inrRender.js';
 import { markupEUR } from './views/currencyRender/eurRender.js';
 import { renderFooter } from './views/footer.js';
+import { clearFieldsWhenCurrencyChanged } from './helpers.js';
 import * as dropdown from './views/dropdown.js';
 
 export function setCurrentCurrency(e) {
-  document.querySelectorAll('.main__items--price').forEach((el) => {
-    el.innerHTML = '';
-  });
-
   state.currentVal = e.target.value;
+  clearFieldsWhenCurrencyChanged();
 }
 
 export const controlUSDData = function (data) {

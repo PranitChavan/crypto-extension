@@ -53,3 +53,14 @@ export function updateColorBasedOnLastPrice(currency, currPrice, fiatCurrency) {
 
   priceEl.innerHTML = `${formatNumber(currPrice, fiatCurrency)}`;
 }
+
+export function clearFieldsWhenCurrencyChanged() {
+  document.querySelectorAll('.main__items--percentage').forEach((el) => {
+    el.innerHTML = '';
+  });
+
+  document.querySelectorAll('.main__items--price').forEach((el) => {
+    el.innerHTML = '';
+    el.removeAttribute('style');
+  });
+}
