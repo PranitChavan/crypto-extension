@@ -1,0 +1,1 @@
+import{updateColorBasedOnLastPrice}from"../../helpers.js";function markupINR(e,r){var t,r=r["c"];document.querySelector(`.${e}-percentage`).innerHTML="","btc"===e&&(t=Number(r),updateColorBasedOnLastPrice("btc",t,"INR")),"eth"===e&&(t=Number(r),updateColorBasedOnLastPrice("eth",t,"INR")),"bnb"===e&&(r=Number(r),updateColorBasedOnLastPrice("bnb",r,"INR"))}export{markupINR};
