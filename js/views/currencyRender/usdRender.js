@@ -1,27 +1,47 @@
 'use strict';
 
 import { formatColor, formatNumber } from '../../helpers.js';
-let btcLastPrice = null;
-let ethLastPrice = null;
+const lastPrices = {
+  btcLastPrice: null,
+  ethLastPrice: null,
+  bnbLastPrice: null,
+};
+
+function updateColorBasedOnLastPrice(currency, currPrice) {
+  const priceEl = document.querySelector(`.${currency}-price`);
+
+  priceEl.style.color =
+    !lastPrices[`${currency}LastPrice`] ||
+    lastPrices[`${currency}LastPrice`] === currPrice
+      ? 'white'
+      : currPrice > lastPrices[`${currency}LastPrice`]
+      ? 'green'
+      : 'red';
+
+  lastPrices[`${currency}LastPrice`] = currPrice;
+
+  priceEl.innerHTML = `${formatNumber(currPrice, 'USD')}`;
+}
 
 export function markupUSD(currency, data) {
-  const priceEl = document.querySelector(`.${currency}-price`);
   const percentageEl = document.querySelector(`.${currency}-percentage`);
 
   const { P: percentage, c: price } = data;
 
   if (currency === 'btc') {
     const currPrice = Number(price);
-
-    if (!btcLastPrice) {
-      priceEl.style.color = 'white';
-    }
-
-    priceEl.style.color = currPrice > btcLastPrice ? 'green' : 'red';
-    btcLastPrice = price;
+    updateColorBasedOnLastPrice('btc', currPrice);
   }
 
-  priceEl.innerHTML = `${formatNumber(price, 'USD')}`;
+  if (currency === 'eth') {
+    const currPrice = Number(price);
+    updateColorBasedOnLastPrice('eth', currPrice);
+  }
+
+  if (currency === 'bnb') {
+    const currPrice = Number(price);
+    updateColorBasedOnLastPrice('bnb', currPrice);
+  }
 
   formatColor(percentage, currency);
 
