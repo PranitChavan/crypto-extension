@@ -1,18 +1,29 @@
 'use strict';
 
 import { formatColor, formatNumber } from '../../helpers.js';
-
-let lastPrice = null;
+let btcLastPrice = null;
+let ethLastPrice = null;
 
 export function markupUSD(currency, data) {
-  formatColor(data.P, currency);
+  const priceEl = document.querySelector(`.${currency}-price`);
+  const percentageEl = document.querySelector(`.${currency}-percentage`);
 
-  document.querySelector(
-    `.${currency}-percentage`
-  ).innerHTML = `${data.P} <span class="main__items--duration">(24h)</span>`;
+  const { P: percentage, c: price } = data;
 
-  document.querySelector(`.${currency}-price`).innerHTML = `${formatNumber(
-    data.c,
-    'USD'
-  )}`;
+  if (currency === 'btc') {
+    const currPrice = Number(price);
+
+    if (!btcLastPrice) {
+      priceEl.style.color = 'white';
+    }
+
+    priceEl.style.color = currPrice > btcLastPrice ? 'green' : 'red';
+    btcLastPrice = price;
+  }
+
+  priceEl.innerHTML = `${formatNumber(price, 'USD')}`;
+
+  formatColor(percentage, currency);
+
+  percentageEl.innerHTML = `${percentage} <span class="main__items--duration">(24h)</span>`;
 }
