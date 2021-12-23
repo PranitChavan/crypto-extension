@@ -21,5 +21,10 @@ export function markupEUR(currency, data) {
     updateColorBasedOnLastPrice('bnb', currPrice, 'EUR');
   }
 
+  if (currency === 'sol') {
+    const currPrice = Number(price);
+    updateColorBasedOnLastPrice('sol', currPrice, 'EUR');
+  }
+
   percentageEl.innerHTML = `${percentage} <span class="main__items--duration">(24h)</span>`;
 }

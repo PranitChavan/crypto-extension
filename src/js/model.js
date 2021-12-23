@@ -15,7 +15,12 @@ export const state = {
  */
 
 export function getUSDData() {
-  let streams = ['btcusdt@ticker', 'ethusdt@ticker', 'bnbusdt@ticker'];
+  let streams = [
+    'btcusdt@ticker',
+    'ethusdt@ticker',
+    'bnbusdt@ticker',
+    'solusdt@ticker',
+  ];
   let ws = new WebSocket(
     'wss://stream.binance.com:9443/ws/' + streams.join('/')
   );
@@ -23,6 +28,7 @@ export function getUSDData() {
   ws.onmessage = (e) => {
     const data = JSON.parse(e.data);
     controlUSDData(data);
+    console.log(data);
   };
 
   return;

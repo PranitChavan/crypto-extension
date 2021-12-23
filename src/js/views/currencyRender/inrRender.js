@@ -18,4 +18,9 @@ export function markupINR(currency, data) {
     const currPrice = Number(price);
     updateColorBasedOnLastPrice('bnb', currPrice, 'INR');
   }
+
+  if (currency === 'sol') {
+    const currPrice = Number(price);
+    updateColorBasedOnLastPrice('sol', currPrice, 'INR');
+  }
 }

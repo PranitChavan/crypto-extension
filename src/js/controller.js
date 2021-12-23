@@ -24,6 +24,10 @@ export const controlUSDData = function (data) {
     if (data.s === 'BNBUSDT') {
       markupUSD('bnb', data);
     }
+
+    if (data.s === 'SOLUSDT') {
+      markupUSD('sol', data);
+    }
   }
 };
 
@@ -41,6 +45,9 @@ export const controlINRData = function (data) {
       if (coin.s === 'bnbinr') {
         markupINR('bnb', coin);
       }
+      if (coin.s === 'solinr') {
+        markupINR('sol', coin);
+      }
     });
   }
 };
@@ -56,6 +63,10 @@ export const controlEURData = function (data) {
 
     if (data.s === 'BNBEUR') {
       markupEUR('bnb', data);
+    }
+
+    if (data.s === 'SOLEUR') {
+      markupEUR('sol', data);
     }
   }
 };
