@@ -27,6 +27,16 @@ export function markupUSD(currency, data) {
     updateColorBasedOnLastPrice('sol', currPrice, 'USD');
   }
 
+  if (currency === 'ltc') {
+    const currPrice = Number(price);
+    updateColorBasedOnLastPrice('ltc', currPrice, 'USD');
+  }
+
+  if (currency === 'ada') {
+    const currPrice = Number(price);
+    updateColorBasedOnLastPrice('ada', currPrice, 'USD');
+  }
+
   formatColor(percentage, currency);
 
   percentageEl.innerHTML = `${percentage} <span class="main__items--duration">(24h)</span>`;

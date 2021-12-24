@@ -20,6 +20,8 @@ export function getUSDData() {
     'ethusdt@ticker',
     'bnbusdt@ticker',
     'solusdt@ticker',
+    'ltcusdt@ticker',
+    'adausdt@ticker',
   ];
   let ws = new WebSocket(
     'wss://stream.binance.com:9443/ws/' + streams.join('/')
@@ -28,7 +30,6 @@ export function getUSDData() {
   ws.onmessage = (e) => {
     const data = JSON.parse(e.data);
     controlUSDData(data);
-    console.log(data);
   };
 
   return;
@@ -65,7 +66,14 @@ getINRData();
  */
 
 export function getEURData() {
-  let streamsEUR = ['btceur@ticker', 'etheur@ticker', 'bnbeur@ticker'];
+  let streamsEUR = [
+    'btceur@ticker',
+    'etheur@ticker',
+    'bnbeur@ticker',
+    'soleur@ticker',
+    'ltceur@ticker',
+    'adaeur@ticker',
+  ];
   let wsEUR = new WebSocket(
     'wss://stream.binance.com:9443/ws/' + streamsEUR.join('/')
   );

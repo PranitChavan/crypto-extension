@@ -28,6 +28,14 @@ export const controlUSDData = function (data) {
     if (data.s === 'SOLUSDT') {
       markupUSD('sol', data);
     }
+
+    if (data.s === 'LTCUSDT') {
+      markupUSD('ltc', data);
+    }
+
+    if (data.s === 'ADAUSDT') {
+      markupUSD('ada', data);
+    }
   }
 };
 
@@ -48,6 +56,12 @@ export const controlINRData = function (data) {
       if (coin.s === 'solinr') {
         markupINR('sol', coin);
       }
+      if (coin.s === 'ltcinr') {
+        markupINR('ltc', coin);
+      }
+      if (coin.s === 'adainr') {
+        markupINR('ada', coin);
+      }
     });
   }
 };
@@ -67,6 +81,14 @@ export const controlEURData = function (data) {
 
     if (data.s === 'SOLEUR') {
       markupEUR('sol', data);
+    }
+
+    if (data.s === 'LTCEUR') {
+      markupEUR('ltc', data);
+    }
+
+    if (data.s === 'ADAEUR') {
+      markupEUR('ada', data);
     }
   }
 };

@@ -23,4 +23,14 @@ export function markupINR(currency, data) {
     const currPrice = Number(price);
     updateColorBasedOnLastPrice('sol', currPrice, 'INR');
   }
+
+  if (currency === 'ltc') {
+    const currPrice = Number(price);
+    updateColorBasedOnLastPrice('ltc', currPrice, 'INR');
+  }
+
+  if (currency === 'ada') {
+    const currPrice = Number(price);
+    updateColorBasedOnLastPrice('ada', currPrice, 'INR');
+  }
 }
