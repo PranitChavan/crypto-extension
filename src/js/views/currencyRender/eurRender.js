@@ -1,37 +1,17 @@
 import { updateColorBasedOnLastPrice, formatColor } from '../../helpers.js';
 
+function provideDataForColorUpdate(coin, currentPrice) {
+  updateColorBasedOnLastPrice(coin, currentPrice, 'EUR');
+}
+
 export function markupEUR(currency, data) {
   const percentageEl = document.querySelector(`.${currency}-percentage`);
   const { P: percentage, c: price } = data;
 
   formatColor(percentage, currency);
 
-  if (currency === 'btc') {
-    const currPrice = Number(price);
-    updateColorBasedOnLastPrice('btc', currPrice, 'EUR');
-  }
+  let currentPrice = Number(price);
 
-  if (currency === 'eth') {
-    const currPrice = Number(price);
-    updateColorBasedOnLastPrice('eth', currPrice, 'EUR');
-  }
-
-  if (currency === 'bnb') {
-    const currPrice = Number(price);
-    updateColorBasedOnLastPrice('bnb', currPrice, 'EUR');
-  }
-
-  if (currency === 'sol') {
-    const currPrice = Number(price);
-    updateColorBasedOnLastPrice('sol', currPrice, 'EUR');
-  }
-  if (currency === 'ltc') {
-    const currPrice = Number(price);
-    updateColorBasedOnLastPrice('ltc', currPrice, 'EUR');
-  }
-  if (currency === 'ada') {
-    const currPrice = Number(price);
-    updateColorBasedOnLastPrice('ada', currPrice, 'EUR');
-  }
+  provideDataForColorUpdate(currency, currentPrice);
   percentageEl.innerHTML = `${percentage} <span class="main__items--duration">(24h)</span>`;
 }
