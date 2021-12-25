@@ -1,8 +1,8 @@
 {
-  "name": "Experiment",
-  "version": "1",
+  "name": "Crypto Realtime Price Ticker (USD/EUR/INR)",
+  "version": "2",
   "manifest_version": 2,
-  "description": "Shows realtime data of crypto currency prices in INR and USD.",
+  "description": "Shows realtime data of crypto currency prices in USD, EUR AND INR.",
   "browser_action": {
     "default_popup": "index.html",
     "default_icon": "/img/default.png"
