@@ -8,6 +8,7 @@ export const formatNumber = function (data, currency) {
   return new Intl.NumberFormat(localeDecider(currency), {
     style: 'currency',
     currency: currency,
+    minimumFractionDigits: +data.toFixed(0) > 5 ? 2 : 6,
   }).format(data);
 };
 
@@ -31,6 +32,8 @@ export const formatDate = function () {
 
   return new Intl.DateTimeFormat('en-In', config).format(new Date());
 };
+
+// Color changing
 
 const lastPrices = {
   btcLastPrice: null,

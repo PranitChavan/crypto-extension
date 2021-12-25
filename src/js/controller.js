@@ -36,6 +36,15 @@ export const controlUSDData = function (data) {
     if (data.s === 'ADAUSDT') {
       markupUSD('ada', data);
     }
+    if (data.s === 'XRPUSDT') {
+      markupUSD('xrp', data);
+    }
+    if (data.s === 'DOGEUSDT') {
+      markupUSD('doge', data);
+    }
+    if (data.s === 'SHIBUSDT') {
+      markupUSD('shib', data);
+    }
   }
 };
 
@@ -61,6 +70,15 @@ export const controlINRData = function (data) {
       }
       if (coin.s === 'adainr') {
         markupINR('ada', coin);
+      }
+      if (coin.s === 'xrpinr') {
+        markupINR('xrp', coin);
+      }
+      if (coin.s === 'dogeinr') {
+        markupINR('doge', coin);
+      }
+      if (coin.s === 'shibinr') {
+        markupINR('shib', coin);
       }
     });
   }
@@ -89,6 +107,15 @@ export const controlEURData = function (data) {
 
     if (data.s === 'ADAEUR') {
       markupEUR('ada', data);
+    }
+    if (data.s === 'XRPEUR') {
+      markupEUR('xrp', data);
+    }
+    if (data.s === 'DOGEEUR') {
+      markupEUR('doge', data);
+    }
+    if (data.s === 'SHIBEUR') {
+      markupEUR('shib', data);
     }
   }
 };

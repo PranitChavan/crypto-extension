@@ -22,6 +22,9 @@ export function getUSDData() {
     'solusdt@ticker',
     'ltcusdt@ticker',
     'adausdt@ticker',
+    'xrpusdt@ticker',
+    'dogeusdt@ticker',
+    'shibusdt@ticker',
   ];
   let ws = new WebSocket(
     'wss://stream.binance.com:9443/ws/' + streams.join('/')
@@ -71,6 +74,9 @@ export function getEURData() {
     'soleur@ticker',
     'ltceur@ticker',
     'adaeur@ticker',
+    'xrpeur@ticker',
+    'dogeeur@ticker',
+    'shibeur@ticker',
   ];
   let wsEUR = new WebSocket(
     'wss://stream.binance.com:9443/ws/' + streamsEUR.join('/')
