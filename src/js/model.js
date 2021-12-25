@@ -30,9 +30,8 @@ export function getUSDData() {
   ws.onmessage = (e) => {
     const data = JSON.parse(e.data);
     controlUSDData(data);
+    return;
   };
-
-  return;
 }
 
 getUSDData();
@@ -54,9 +53,8 @@ export function getINRData() {
     const res = JSON.parse(e.data);
     const { data } = res;
     controlINRData(data);
+    return;
   };
-
-  return;
 }
 
 getINRData();
@@ -81,9 +79,8 @@ export function getEURData() {
   wsEUR.onmessage = (e) => {
     const data = JSON.parse(e.data);
     controlEURData(data);
+    return;
   };
-
-  return;
 }
 
 getEURData();

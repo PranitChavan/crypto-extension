@@ -6,6 +6,7 @@ function provideDataForColorUpdate(coin, currentPrice) {
 
 export function markupINR(currency, data) {
   const { c: price } = data;
+
   document.querySelector(`.${currency}-percentage`).innerHTML = '';
 
   let currentPrice = Number(price);
