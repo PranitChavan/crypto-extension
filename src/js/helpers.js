@@ -8,7 +8,7 @@ export const formatNumber = function (data, currency) {
   return new Intl.NumberFormat(localeDecider(currency), {
     style: 'currency',
     currency: currency,
-    minimumFractionDigits: +data.toFixed(0) > 5 ? 2 : 6,
+    minimumFractionDigits: +data.toFixed(0) > 5 ? 2 : 8,
   }).format(data);
 };
 
